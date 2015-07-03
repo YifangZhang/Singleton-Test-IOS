@@ -14,6 +14,9 @@
 		16BBAC471B44ECE100D55273 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16BBAC461B44ECE100D55273 /* Images.xcassets */; };
 		16BBAC4A1B44ECE100D55273 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16BBAC481B44ECE100D55273 /* LaunchScreen.xib */; };
 		16BBAC561B44ECE100D55273 /* testClassesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BBAC551B44ECE100D55273 /* testClassesTests.m */; };
+		16BBAC611B46214600D55273 /* SharedDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BBAC601B46214600D55273 /* SharedDatabaseManager.m */; };
+		16BBAC651B46261B00D55273 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BBAC641B46261B00D55273 /* DBManager.m */; };
+		16BBAC671B46290F00D55273 /* hands.sql in Resources */ = {isa = PBXBuildFile; fileRef = 16BBAC661B46290F00D55273 /* hands.sql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,11 @@
 		16BBAC4F1B44ECE100D55273 /* testClassesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testClassesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16BBAC541B44ECE100D55273 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16BBAC551B44ECE100D55273 /* testClassesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testClassesTests.m; sourceTree = "<group>"; };
+		16BBAC5F1B46214600D55273 /* SharedDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedDatabaseManager.h; sourceTree = "<group>"; };
+		16BBAC601B46214600D55273 /* SharedDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedDatabaseManager.m; sourceTree = "<group>"; };
+		16BBAC631B46261B00D55273 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		16BBAC641B46261B00D55273 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		16BBAC661B46290F00D55273 /* hands.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = hands.sql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,7 @@
 		16BBAC381B44ECE100D55273 /* testClasses */ = {
 			isa = PBXGroup;
 			children = (
+				16BBAC621B4625E800D55273 /* database */,
 				16BBAC3D1B44ECE100D55273 /* AppDelegate.h */,
 				16BBAC3E1B44ECE100D55273 /* AppDelegate.m */,
 				16BBAC401B44ECE100D55273 /* ViewController.h */,
@@ -96,6 +105,7 @@
 		16BBAC391B44ECE100D55273 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				16BBAC661B46290F00D55273 /* hands.sql */,
 				16BBAC3A1B44ECE100D55273 /* Info.plist */,
 				16BBAC3B1B44ECE100D55273 /* main.m */,
 			);
@@ -117,6 +127,17 @@
 				16BBAC541B44ECE100D55273 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		16BBAC621B4625E800D55273 /* database */ = {
+			isa = PBXGroup;
+			children = (
+				16BBAC631B46261B00D55273 /* DBManager.h */,
+				16BBAC641B46261B00D55273 /* DBManager.m */,
+				16BBAC5F1B46214600D55273 /* SharedDatabaseManager.h */,
+				16BBAC601B46214600D55273 /* SharedDatabaseManager.m */,
+			);
+			name = database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16BBAC451B44ECE100D55273 /* Main.storyboard in Resources */,
+				16BBAC671B46290F00D55273 /* hands.sql in Resources */,
 				16BBAC4A1B44ECE100D55273 /* LaunchScreen.xib in Resources */,
 				16BBAC471B44ECE100D55273 /* Images.xcassets in Resources */,
 			);
@@ -220,8 +242,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				16BBAC421B44ECE100D55273 /* ViewController.m in Sources */,
+				16BBAC611B46214600D55273 /* SharedDatabaseManager.m in Sources */,
 				16BBAC3F1B44ECE100D55273 /* AppDelegate.m in Sources */,
 				16BBAC3C1B44ECE100D55273 /* main.m in Sources */,
+				16BBAC651B46261B00D55273 /* DBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
