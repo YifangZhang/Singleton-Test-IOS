@@ -22,6 +22,7 @@
     self.image2.tag = 2;
     self.image3.tag = 3;
     self.image4.tag = 4;
+    self.counter = 0;
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -133,21 +134,25 @@
     //上传的网上路径
     [manager POST:@"http://www.code-desire.com.tw/LiMao/Upload/Yifang/testUpload.php" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         //上传图片的本地路径和上传图片的文件名
-        NSInteger * counter = 0;
+        //NSInteger * counter = 0;
         for (NSData *imageData in self.imageArray) {
-            [formData appendPartWithFileData:imageData name:[NSString stringWithFormat:@"image%ld", (long)counter] fileName:[NSString stringWithFormat:@"image%ld.jpg", (long)counter] mimeType:@"image/jpeg"];
-            counter = counter + 1;
+            [formData appendPartWithFileData:imageData name:[NSString stringWithFormat:@"image%ld", (long)self.counter] fileName:[NSString stringWithFormat:@"image%ld.jpg", (long)self.counter] mimeType:@"image/jpeg"];
+            self.counter = self.counter + 1;
         }
-        self.imageArray = [[NSMutableArray alloc] init];
-        
         //[formData appendPartWithFileURL:filePath name:@"rpf" error:nil];
         // NSLog(@"%@",filePath);
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Success: %@", responseObject);
-        NSString *message = responseObject[@"message"];
-        NSLog(@"message:%@",message);
+        //NSString *message = responseObject[@"message"];
+        //NSLog(@"message:%@",message);
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Message" message:@"successfully upload" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alertView show];
+        self.imageArray = [[NSMutableArray alloc] init];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Message" message:@"failed to upload" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alertView show];
+        self.imageArray = [[NSMutableArray alloc] init];
     }];
     
 }

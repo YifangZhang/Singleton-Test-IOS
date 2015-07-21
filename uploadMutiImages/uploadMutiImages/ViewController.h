@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *image4;
 @property NSMutableArray * imageArray;
 @property NSInteger intButton;
+@property NSInteger * counter;
 
 - (IBAction)selectImages:(id)sender;
 - (IBAction)postImages:(id)sender;
